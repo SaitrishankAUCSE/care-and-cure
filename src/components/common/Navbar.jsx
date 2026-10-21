@@ -16,16 +16,16 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { to: '/', label: 'Clinic Home', end: true },
+    { to: '/', label: 'Home', end: true },
     {
       to: '/appointments',
-      label: 'Reception Desk',
+      label: 'Reception OPD',
       badge: stats.pending > 0 ? stats.pending : null
     },
     { to: '/simulator', label: 'WhatsApp Simulator' },
     {
       to: '/reminders',
-      label: 'Reminders Log',
+      label: 'Reminders',
       badge: stats.remindersDue > 0 ? stats.remindersDue : null
     },
     { to: '/settings', label: 'Clinic Hours' }
@@ -63,22 +63,19 @@ export default function Navbar() {
 
       {/* Main Clinic Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 gap-3">
+        <div className="flex items-center justify-between h-20 gap-4">
           {/* Clinic Brand & Doctors */}
-          <Link to="/" className="flex items-center gap-3 group shrink-0 min-w-0">
-            <div className="w-11 h-11 rounded-xl bg-emerald-700 text-white flex items-center justify-center shadow-md shrink-0 group-hover:bg-emerald-800 transition-colors">
-              <Activity className="w-6 h-6" />
+          <Link to="/" className="flex items-center gap-3 group shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-emerald-700 text-white flex items-center justify-center shadow-md shrink-0 group-hover:bg-emerald-800 transition-colors">
+              <Activity className="w-5 h-5" />
             </div>
-            <div className="min-w-0">
+            <div>
               <div className="flex items-center gap-2">
-                <span className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight leading-tight truncate">
+                <span className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight leading-tight">
                   Care & Cure Physiotherapy
                 </span>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 hidden xl:inline shrink-0">
-                  Malkapuram, Vizag
-                </span>
               </div>
-              <p className="text-xs text-slate-600 font-medium truncate">
+              <p className="text-xs text-slate-600 font-medium">
                 Dr. K. Hareesh Patnaik & Dr. V.V. Reshma Patnaik • Sports Injury Clinic
               </p>
             </div>
@@ -92,7 +89,7 @@ export default function Navbar() {
                 to={link.to}
                 end={link.end}
                 className={({ isActive }) =>
-                  `px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0 ${
+                  `px-2.5 py-1.5 xl:px-3 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0 ${
                     isActive
                       ? 'bg-emerald-50 text-emerald-800 border border-emerald-200 shadow-2xs'
                       : 'text-slate-600 hover:text-emerald-800 hover:bg-emerald-50/60'
@@ -110,10 +107,10 @@ export default function Navbar() {
           </nav>
 
           {/* Book Slot CTA Button (Right Action) */}
-          <div className="hidden sm:flex items-center gap-2 shrink-0">
+          <div className="hidden sm:flex items-center shrink-0">
             <Link
               to="/book"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-xs transition-all active:scale-[0.98] whitespace-nowrap shrink-0"
+              className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-xs transition-all active:scale-[0.98] whitespace-nowrap shrink-0"
             >
               <CalendarPlus className="w-4 h-4 shrink-0" />
               <span>Book Appointment</span>
