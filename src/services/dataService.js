@@ -14,8 +14,8 @@ import {
   getDoc
 } from 'firebase/firestore';
 
-const APPOINTMENTS_STORAGE_KEY = 'care_cure_appointments_v1';
-const SETTINGS_STORAGE_KEY = 'care_cure_settings_v1';
+const APPOINTMENTS_STORAGE_KEY = 'care_cure_appointments_v3';
+const SETTINGS_STORAGE_KEY = 'care_cure_settings_v3';
 
 // In-memory subscribers for local demo mode
 const appointmentListeners = new Set();
@@ -58,7 +58,7 @@ export function getStorageModeLabel() {
 function getLocalAppointments() {
   try {
     const raw = localStorage.getItem(APPOINTMENTS_STORAGE_KEY);
-    if (!raw) {
+    if (!raw || raw.includes('Demo') || raw.includes('Sample') || raw.includes('Mock')) {
       const initial = getInitialAppointments();
       localStorage.setItem(APPOINTMENTS_STORAGE_KEY, JSON.stringify(initial));
       return initial;
