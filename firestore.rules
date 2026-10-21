@@ -1,0 +1,45 @@
+rules_version = '2';
+
+// =========================================================================
+// NOTE: These Firestore Security Rules are strictly for DEMO PURPOSES ONLY.
+// They are intended for the "Care And Cure Physiotherapy – Booking & Reminder Demo"
+// and restrict access solely to fictional demo appointment and demo settings records.
+// DO NOT USE THESE RULES IN A REAL PRODUCTION HEALTHCARE ENVIRONMENT.
+// =========================================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions for validating demo payload
+    function isValidAppointment() {
+      let data = request.resource.data;
+      return data.keys().hasAll(['patientName', 'phone', 'date', 'time', 'type', 'status'])
+        && data.patientName is string && data.patientName.size() >= 2 && data.patientName.size() <= 80
+        && data.phone is string && data.phone.size() >= 5 && data.phone.size() <= 40
+        && data.date is string && data.date.size() == 10
+        && data.time is string && data.time.size() >= 4 && data.time.size() <= 15
+        && data.type in ['Initial consultation', 'Physiotherapy session', 'Follow-up']
+        && data.status in ['Pending', 'Confirmed', 'Completed', 'Cancelled']
+        && (!('notes' in data) || (data.notes is string && data.notes.size() <= 150));
+    }
+
+    // Allow read/write solely to demo appointments collection
+    match /demo_appointments/{appointmentId} {
+      allow read: if true;
+      allow create: if isValidAppointment();
+      allow update: if isValidAppointment();
+      allow delete: if true;
+    }
+
+    // Allow read/write solely to demo settings collection
+    match /demo_settings/{settingId} {
+      allow read: if true;
+      allow write: if request.resource.data.keys().hasAny(['clinicName', 'openHours', 'breakHours', 'slotDuration', 'contactPhone']);
+    }
+
+    // Block all other collections by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
