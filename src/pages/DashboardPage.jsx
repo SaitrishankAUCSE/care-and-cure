@@ -100,7 +100,7 @@ export default function DashboardPage() {
               </span>
               <span className="flex items-center gap-1.5">
                 <MapPin className="w-4 h-4 text-emerald-600" />
-                Malkapuram, Visakhapatnam
+                D.No. 61-1-33, Opp. HPCL Main Gate, Ramakrishnapuram, Malkapuram, Vizag
               </span>
               <span className="flex items-center gap-1.5">
                 <Phone className="w-4 h-4 text-emerald-600" />
@@ -344,7 +344,7 @@ export default function DashboardPage() {
               <span>Care & Cure Physiotherapy Clinic</span>
             </h4>
             <p className="leading-relaxed">
-              Malkapuram, Visakhapatnam, Andhra Pradesh 530011.
+              D.No. 61-1-33, Opp. HPCL Main Gate, Near Union Bank of India (formerly Andhra Bank), Ramakrishnapuram Main Road, Malkapuram, Visakhapatnam, Andhra Pradesh 530011.
             </p>
             <p className="mt-2 text-emerald-300">
               Dr. K. Hareesh Patnaik & Dr. V.V. Reshma Patnaik

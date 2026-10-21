@@ -34,7 +34,8 @@ export function getReminderMessage(patientName, date, time) {
 export const CLINIC_DEFAULT_INFO = {
   name: "Care And Cure Physiotherapy Clinic",
   doctors: "Dr. K. Hareesh Patnaik & Dr. V.V. Reshma Patnaik",
-  address: "Malkapuram, Visakhapatnam, Andhra Pradesh 530011",
+  address: "D.No. 61-1-33, Opp. HPCL Main Gate, Near Union Bank of India, Ramakrishnapuram Main Road, Malkapuram, Visakhapatnam, Andhra Pradesh 530011",
+  landmark: "Opp. HPCL Main Gate, Near Union Bank of India",
   phone: "+91 87909 72042",
   breakNotice: "Break hours: 12:00 PM – 4:00 PM. Slot requests are accepted 24/7 online!",
   hoursNote: "Online directories note 9:00 AM – 12:00 PM & 4:00 PM – 9:00 PM. Schedule confirmed upon request."

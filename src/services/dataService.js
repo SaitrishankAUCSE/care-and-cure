@@ -14,8 +14,8 @@ import {
   getDoc
 } from 'firebase/firestore';
 
-const APPOINTMENTS_STORAGE_KEY = 'care_cure_appointments_v3';
-const SETTINGS_STORAGE_KEY = 'care_cure_settings_v3';
+const APPOINTMENTS_STORAGE_KEY = 'care_cure_appointments_v4';
+const SETTINGS_STORAGE_KEY = 'care_cure_settings_v4';
 
 // In-memory subscribers for local demo mode
 const appointmentListeners = new Set();

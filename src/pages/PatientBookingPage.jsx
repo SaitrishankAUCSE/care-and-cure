@@ -226,7 +226,7 @@ export default function PatientBookingPage() {
               Phone busy or clinic on a break? Request your slot here 24/7.
             </h2>
             <p className="text-xs text-emerald-800 mt-0.5 leading-relaxed">
-              Care & Cure Physiotherapy, Malkapuram (Dr. K. Hareesh Patnaik & Dr. V.V. Reshma Patnaik • 87909 72042). When doctors are in hospital consultations or observing the 12 PM – 4 PM break, you can reserve your slot online without waiting on hold!
+              Care & Cure Physiotherapy, D.No. 61-1-33, Opp. HPCL Main Gate, Malkapuram (Dr. K. Hareesh Patnaik & Dr. V.V. Reshma Patnaik • 87909 72042). When doctors are in hospital consultations or observing the 12 PM – 4 PM break, you can reserve your slot online without waiting on hold!
             </p>
           </div>
         </div>
