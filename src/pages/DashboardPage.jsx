@@ -22,9 +22,9 @@ import {
   Phone,
   UserCheck,
   Award,
-  HeartPulse,
   Stethoscope,
-  ChevronRight
+  ChevronRight,
+  Building2
 } from 'lucide-react';
 
 export default function DashboardPage() {
