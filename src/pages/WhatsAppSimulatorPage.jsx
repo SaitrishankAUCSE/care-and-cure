@@ -45,20 +45,20 @@ export default function WhatsAppSimulatorPage() {
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-              WhatsApp Notification Simulator
+              Patient WhatsApp Notification Preview
             </h1>
             <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
               Demo Simulation
             </span>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Experience the automated patient communication journey without sending real SMS or WhatsApp messages.
+            Care & Cure Clinic • See how patients receive instant reassurance when requesting a slot during the 12 PM – 5 PM break
           </p>
         </div>
 
         <div className="text-xs text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-950/40 px-3 py-1.5 rounded-xl border border-amber-200/80 dark:border-amber-900/60 flex items-center gap-2">
           <Info className="w-4 h-4 shrink-0" />
-          <span>Simulated for clinic evaluation only</span>
+          <span>Simulated for clinic demonstration only</span>
         </div>
       </div>
 

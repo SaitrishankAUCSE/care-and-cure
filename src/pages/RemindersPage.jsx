@@ -54,14 +54,14 @@ export default function RemindersPage() {
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-              Patient Reminder Center
+              Patient Appointment Reminders (WhatsApp & SMS Log)
             </h1>
-            <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-800 dark:text-sky-300">
+            <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300">
               Demo Simulation
             </span>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Track automated WhatsApp reminders sent before appointments to prevent patient no-shows
+            Care & Cure Clinic • Automatic WhatsApp reminders sent before sessions to reduce missed therapy appointments
           </p>
         </div>
 

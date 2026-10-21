@@ -12,13 +12,15 @@ export function getOffsetDateString(offsetDays = 0) {
 }
 
 export function formatDateDisplay(dateStr) {
-  if (!dateStr) return '';
+  if (!dateStr || typeof dateStr !== 'string') return '';
   try {
-    const [year, month, day] = dateStr.split('-').map(Number);
+    const parts = dateStr.split('-');
+    if (parts.length < 3) return dateStr;
+    const [year, month, day] = parts.map(Number);
     const date = new Date(year, month - 1, day);
+    if (isNaN(date.getTime())) return dateStr;
     
     // Check relative
-    const today = new Date();
     const todayStr = getOffsetDateString(0);
     const tomorrowStr = getOffsetDateString(1);
     const yesterdayStr = getOffsetDateString(-1);
@@ -41,7 +43,7 @@ export function formatDateDisplay(dateStr) {
     }
     return formatted;
   } catch {
-    return dateStr;
+    return String(dateStr || '');
   }
 }
 

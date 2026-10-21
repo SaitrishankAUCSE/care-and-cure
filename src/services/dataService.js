@@ -63,7 +63,13 @@ function getLocalAppointments() {
       localStorage.setItem(APPOINTMENTS_STORAGE_KEY, JSON.stringify(initial));
       return initial;
     }
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      const initial = getInitialAppointments();
+      localStorage.setItem(APPOINTMENTS_STORAGE_KEY, JSON.stringify(initial));
+      return initial;
+    }
+    return parsed;
   } catch (err) {
     console.error('Failed to read local appointments, resetting to defaults:', err);
     const initial = getInitialAppointments();

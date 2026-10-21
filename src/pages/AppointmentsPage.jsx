@@ -118,19 +118,19 @@ export default function AppointmentsPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-            Staff Appointment Management
+            Clinic Reception OPD Desk & Appointment Register
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-            Track, filter, edit, and confirm patient physiotherapy appointments
+            Care & Cure Clinic • Manage patient queue, confirm break-hour requests, and register walk-ins
           </p>
         </div>
 
         <button
           onClick={() => setIsCreateModalOpen(true)}
-          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-teal-600 hover:bg-teal-700 text-white shadow-sm transition-all active:scale-95 self-start sm:self-auto"
+          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-teal-700 hover:bg-teal-800 text-white shadow-sm transition-all active:scale-95 self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" />
-          <span>New Appointment (Staff)</span>
+          <span>New Patient Entry (Reception)</span>
         </button>
       </div>
 
