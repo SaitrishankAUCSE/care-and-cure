@@ -67,29 +67,32 @@ export default function AppointmentCard({
       </div>
 
       {/* Action Buttons */}
-      <div className="pt-4 mt-3 flex items-center justify-between gap-2 border-t border-slate-100">
-        <div className="flex items-center gap-1.5">
+      <div className="pt-4 mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100">
+        <div className="flex items-center gap-1.5 shrink-0">
           <button
+            type="button"
             onClick={() => navigate(`/simulator?id=${id}`)}
             title="Open in WhatsApp Simulator"
-            className="p-2 rounded-xl text-slate-500 hover:text-emerald-700 hover:bg-emerald-50 border border-slate-200 transition-colors"
+            className="p-2 rounded-xl text-slate-600 hover:text-emerald-700 hover:bg-emerald-50 border border-slate-200 transition-all active:scale-95 shrink-0"
           >
             <MessageSquare className="w-4 h-4" />
           </button>
           {onEdit && (
             <button
+              type="button"
               onClick={() => onEdit(appointment)}
               title="Edit Appointment"
-              className="p-2 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 border border-slate-200 transition-colors"
+              className="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-slate-200 transition-all active:scale-95 shrink-0"
             >
               <Edit2 className="w-4 h-4" />
             </button>
           )}
           {onDelete && (
             <button
+              type="button"
               onClick={() => onDelete(id)}
               title="Delete Appointment"
-              className="p-2 rounded-xl text-slate-400 hover:text-rose-600 hover:bg-rose-50 border border-slate-200 transition-colors"
+              className="p-2 rounded-xl text-slate-400 hover:text-rose-600 hover:bg-rose-50 border border-slate-200 transition-all active:scale-95 shrink-0"
             >
               <Trash2 className="w-4 h-4" />
             </button>
@@ -99,10 +102,11 @@ export default function AppointmentCard({
         {/* Quick Confirm button for Pending requests */}
         {status === 'Pending' && onConfirm && (
           <button
+            type="button"
             onClick={() => onConfirm(id)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-xs transition-colors"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-xs transition-all active:scale-95 shrink-0 whitespace-nowrap"
           >
-            <CheckCircle2 className="w-4 h-4" />
+            <CheckCircle2 className="w-4 h-4 shrink-0" />
             <span>Confirm Slot</span>
           </button>
         )}

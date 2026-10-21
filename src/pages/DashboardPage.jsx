@@ -112,17 +112,17 @@ export default function DashboardPage() {
             <div className="flex flex-wrap items-center gap-3 pt-3">
               <Link
                 to="/book"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-md transition-all active:scale-95"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-md hover:shadow-lg transition-all active:scale-[0.98] whitespace-nowrap shrink-0"
               >
-                <PlusCircle className="w-4 h-4" />
+                <PlusCircle className="w-4 h-4 shrink-0" />
                 <span>Request Appointment Slot (24/7)</span>
               </Link>
               <Link
                 to="/appointments"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs sm:text-sm font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 transition-all active:scale-[0.98] whitespace-nowrap shrink-0"
               >
-                <Calendar className="w-4 h-4 text-emerald-700" />
-                <span>Reception Desk ({stats.pending} pending requests)</span>
+                <Calendar className="w-4 h-4 text-emerald-700 shrink-0" />
+                <span>Reception Desk ({stats.pending} pending)</span>
               </Link>
             </div>
           </div>

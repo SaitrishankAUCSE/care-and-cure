@@ -127,10 +127,10 @@ export default function AppointmentsPage() {
 
         <button
           onClick={() => setIsCreateModalOpen(true)}
-          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-xs transition-all active:scale-95 self-start sm:self-auto"
+          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-xs transition-all active:scale-[0.98] self-start sm:self-auto whitespace-nowrap shrink-0"
         >
-          <Plus className="w-4 h-4" />
-          <span>New Patient Booking (Reception)</span>
+          <Plus className="w-4 h-4 shrink-0" />
+          <span>New Patient Booking</span>
         </button>
       </div>
 
