@@ -13,12 +13,12 @@ export default function StorageBadge() {
       <span className="relative flex h-2 w-2">
         <span
           className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${
-            isFirebase ? 'bg-emerald-400' : 'bg-teal-400'
+            isFirebase ? 'bg-emerald-400' : 'bg-emerald-400'
           }`}
         />
         <span
           className={`relative inline-flex rounded-full h-2 w-2 ${
-            isFirebase ? 'bg-emerald-500' : 'bg-teal-500'
+            isFirebase ? 'bg-emerald-500' : 'bg-emerald-600'
           }`}
         />
       </span>
@@ -26,7 +26,7 @@ export default function StorageBadge() {
       {isFirebase ? (
         <Database className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
       ) : (
-        <HardDrive className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+        <HardDrive className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
       )}
 
       <span className="text-slate-600 dark:text-slate-300 font-medium hidden sm:inline">

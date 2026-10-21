@@ -42,8 +42,8 @@ export function ToastProvider({ children }) {
           let icon = <Info className="w-5 h-5 text-sky-400 shrink-0" />;
 
           if (t.type === 'success') {
-            bg = 'bg-teal-900/95 text-teal-50 border-teal-500/40 shadow-teal-950/20';
-            icon = <CheckCircle2 className="w-5 h-5 text-teal-400 shrink-0" />;
+            bg = 'bg-emerald-900/95 text-emerald-50 border-emerald-500/40 shadow-emerald-950/20';
+            icon = <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />;
           } else if (t.type === 'error') {
             bg = 'bg-rose-900/95 text-rose-50 border-rose-500/40 shadow-rose-950/20';
             icon = <AlertCircle className="w-5 h-5 text-rose-400 shrink-0" />;

@@ -11,12 +11,10 @@ import {
   Clock,
   CheckCircle2,
   AlertCircle,
-  BellRing,
   Coffee,
   ArrowRight,
   PlusCircle,
   MessageSquare,
-  ShieldCheck,
   MapPin,
   Activity,
   Phone,
@@ -24,11 +22,12 @@ import {
   Award,
   Stethoscope,
   ChevronRight,
-  Building2
+  Building2,
+  ShieldCheck
 } from 'lucide-react';
 
 export default function DashboardPage() {
-  const { appointments, stats, loading, confirmAppointment } = useAppointments();
+  const { appointments, stats, confirmAppointment } = useAppointments();
   const toast = useToast();
   const navigate = useNavigate();
 
@@ -41,71 +40,71 @@ export default function DashboardPage() {
     toast.success('Appointment confirmed! Updated in clinic schedule.');
   };
 
-  const treatments = [
+  const services = [
     {
-      title: "Spine & Sciatica Therapy",
-      desc: "Decompression therapy, core stabilization, and manual traction for lumbar disc herniation and nerve pain.",
-      badge: "Spine Care"
+      title: "Sports Injury Rehabilitation",
+      desc: "Specialized rehabilitation for athlete ligament strains, sprains, joint trauma, and muscle tears.",
+      badge: "Sports Physio"
     },
     {
-      title: "Knee Arthritis & Joint Rehab",
-      desc: "Quadriceps strengthening, ultrasound therapy, and post-total knee replacement mobilization protocols.",
+      title: "Orthopaedic Spine & Back Care",
+      desc: "Lumbar spondylosis, sciatica decompression, postural rehabilitation, and disc management.",
+      badge: "Spine & Disc"
+    },
+    {
+      title: "Knee & Joint Mobility",
+      desc: "Osteoarthritis therapy, post-surgical rehabilitation, ligament strengthening, and patellar care.",
       badge: "Joint Rehab"
     },
     {
-      title: "Cervical Spondylosis & Neck Strain",
-      desc: "Relief for desk workers experiencing radiating shoulder pain, cervical stiffness, and tension headaches.",
-      badge: "Neck & Upper Back"
+      title: "Shoulder & Cervical Therapy",
+      desc: "Frozen shoulder mobilization, rotator cuff repair recovery, and cervical neck stiffness relief.",
+      badge: "Shoulder & Neck"
     },
     {
-      title: "Frozen Shoulder Mobilization",
-      desc: "Capsular stretching, Maitland joint mobilization, and range-of-motion restoration for adhesive capsulitis.",
-      badge: "Shoulder Care"
+      title: "Post-Fracture Rehabilitation",
+      desc: "Joint stiffness resolution, muscle re-education, and functional independence training.",
+      badge: "Post-Trauma"
     },
     {
-      title: "Post-Fracture & Surgical Rehab",
-      desc: "Gradual weight-bearing exercises, scar tissue management, and functional independence training.",
-      badge: "Post-Op Rehab"
-    },
-    {
-      title: "Sports Injury Rehabilitation",
-      desc: "ACL ligament rehab, ankle sprain recovery, rotator cuff conditioning, and return-to-sport protocols.",
-      badge: "Sports Physio"
+      title: "Pain Management & Electrotherapy",
+      desc: "Targeted IFT, TENS, and therapeutic ultrasound for persistent musculoskeletal discomfort.",
+      badge: "Therapy Modalities"
     }
   ];
 
   return (
     <div className="space-y-10 max-w-7xl mx-auto pb-16">
-      {/* Clinic Hero Section */}
-      <section className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 sm:p-10 shadow-xs">
+      {/* Clinic Hero Section - White background with Emerald Green border and accents */}
+      <section className="bg-white rounded-3xl border border-emerald-100 p-6 sm:p-10 shadow-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
-              <Award className="w-3.5 h-3.5" />
-              <span>Visakhapatnam's Trusted Physiotherapy & Spine Clinic</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+              <Award className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Care & Cure Physiotherapy • Malkapuram, Visakhapatnam</span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
-              Care & Cure Physiotherapy & Rehabilitation Centre
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              Care & Cure Physiotherapy & Sports Injury Clinic
             </h1>
 
-            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-              Specialized clinical physiotherapy for acute back spasms, knee osteoarthritis, frozen shoulder, and sports injuries. Led by <strong>Dr. K. Ramanathan, M.P.T. (Ortho)</strong> with 14+ years of clinical excellence in Visakhapatnam.
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              Led by <strong>Dr. K. Hareesh Patnaik</strong> and <strong>Dr. V.V. Reshma Patnaik</strong>, our Malkapuram clinic delivers dedicated physiotherapy, sports-injury recovery, and musculoskeletal rehabilitation.
             </p>
 
             {/* Doctor Info Pill */}
-            <div className="flex flex-wrap items-center gap-4 pt-1 text-xs text-slate-700 dark:text-slate-300">
-              <span className="flex items-center gap-1.5 font-semibold">
-                <UserCheck className="w-4 h-4 text-teal-600" />
-                Dr. K. Ramanathan, M.P.T. (Ortho), MIAP
+            <div className="flex flex-wrap items-center gap-4 pt-1 text-xs text-slate-700">
+              <span className="flex items-center gap-1.5 font-semibold text-emerald-900">
+                <UserCheck className="w-4 h-4 text-emerald-600" />
+                Dr. K. Hareesh Patnaik & Dr. V.V. Reshma Patnaik
               </span>
               <span className="flex items-center gap-1.5">
-                <MapPin className="w-4 h-4 text-teal-600" />
-                Dwaraka Nagar, Visakhapatnam
+                <MapPin className="w-4 h-4 text-emerald-600" />
+                Malkapuram, Visakhapatnam
               </span>
               <span className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4 text-teal-600" />
-                Consultation: ₹400 / session
+                <Phone className="w-4 h-4 text-emerald-600" />
+                +91 87909 72042
               </span>
             </div>
 
@@ -113,47 +112,47 @@ export default function DashboardPage() {
             <div className="flex flex-wrap items-center gap-3 pt-3">
               <Link
                 to="/book"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold bg-teal-700 hover:bg-teal-800 text-white shadow-md transition-all active:scale-95"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-md transition-all active:scale-95"
               >
                 <PlusCircle className="w-4 h-4" />
-                <span>Book Consultation Slot (24/7)</span>
+                <span>Request Appointment Slot (24/7)</span>
               </Link>
               <Link
                 to="/appointments"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 transition-colors"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Reception OPD Schedule ({stats.pending} pending)</span>
+                <Calendar className="w-4 h-4 text-emerald-700" />
+                <span>Reception Desk ({stats.pending} pending requests)</span>
               </Link>
             </div>
           </div>
 
           {/* Break Period Alert Card */}
           <div className="lg:col-span-5">
-            <div className="rounded-2xl border-2 border-amber-300 dark:border-amber-800 bg-amber-50/80 dark:bg-amber-950/30 p-6 space-y-3.5 shadow-sm">
-              <div className="flex items-center gap-2 text-amber-900 dark:text-amber-200 font-bold text-sm">
-                <Coffee className="w-5 h-5 text-amber-700 dark:text-amber-400 shrink-0" />
-                <span>Clinic Afternoon Break: 12:00 PM – 5:00 PM</span>
+            <div className="rounded-2xl border border-emerald-200 bg-emerald-50/70 p-6 space-y-3.5 shadow-xs">
+              <div className="flex items-center gap-2 text-emerald-900 font-bold text-sm">
+                <Coffee className="w-5 h-5 text-emerald-700 shrink-0" />
+                <span>Break Hours Notice: 12:00 PM – 4:00 PM</span>
               </div>
 
-              <p className="text-xs text-amber-950 dark:text-amber-100 leading-relaxed">
-                Our clinic takes an afternoon rest break and conducts hospital inpatient rounds between <strong>12 PM and 5 PM</strong>. Reception phone calls during this period may be unattended.
+              <p className="text-xs text-slate-700 leading-relaxed">
+                During our mid-day break and off-hours, phone lines may be busy. Patients experiencing joint, spine, or sports injuries can request their consultation slot online anytime.
               </p>
 
-              <div className="bg-white dark:bg-slate-900 rounded-xl p-3.5 border border-amber-200 dark:border-amber-900/60 text-xs text-slate-700 dark:text-slate-300 space-y-1.5">
-                <p className="font-semibold text-teal-800 dark:text-teal-300">
-                  ✓ Need a slot right now?
+              <div className="bg-white rounded-xl p-3.5 border border-emerald-100 text-xs text-slate-700 space-y-1.5">
+                <p className="font-semibold text-emerald-800">
+                  ✓ Instant Patient Reassurance:
                 </p>
-                <p className="text-slate-600 dark:text-slate-400">
-                  Select your slot online anytime. You will immediately receive a simulated WhatsApp confirmation message, and staff will confirm your slot upon reopening.
+                <p className="text-slate-600">
+                  Patients receive a simulated WhatsApp confirmation immediately, and our reception desk confirms availability with one click upon reopening.
                 </p>
               </div>
 
               <Link
                 to="/simulator"
-                className="text-xs font-bold text-amber-800 dark:text-amber-300 hover:underline flex items-center gap-1 pt-1"
+                className="text-xs font-bold text-emerald-800 hover:text-emerald-900 hover:underline flex items-center gap-1 pt-1"
               >
-                <span>Preview the WhatsApp confirmation patients receive</span>
+                <span>Preview the WhatsApp confirmation messages</span>
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
@@ -161,42 +160,42 @@ export default function DashboardPage() {
         </div>
       </section>
 
-      {/* Clinical Treatments Grid */}
+      {/* Clinical Services Grid */}
       <section className="space-y-4">
         <div>
-          <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-            <Stethoscope className="w-5 h-5 text-teal-700" />
-            <span>Conditions Treated at Care & Cure Visakhapatnam</span>
+          <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+            <Stethoscope className="w-5 h-5 text-emerald-700" />
+            <span>Physiotherapy & Sports-Injury Services</span>
           </h2>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-            Evidence-based physiotherapy modalities including IFT, Ultrasound, TENS, Traction, and Manual Therapy
+          <p className="text-xs sm:text-sm text-slate-600">
+            Care & Cure Clinic • Malkapuram, Visakhapatnam
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {treatments.map((t, idx) => (
+          {services.map((s, idx) => (
             <div
               key={idx}
-              className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 p-5 shadow-xs hover:border-teal-500 transition-colors flex flex-col justify-between"
+              className="bg-white rounded-2xl border border-emerald-100 p-5 shadow-xs hover:border-emerald-500 transition-colors flex flex-col justify-between"
             >
               <div className="space-y-2">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/50 px-2 py-0.5 rounded">
-                  {t.badge}
+                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  {s.badge}
                 </span>
-                <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
-                  {t.title}
+                <h3 className="text-base font-bold text-slate-900">
+                  {s.title}
                 </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                  {t.desc}
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  {s.desc}
                 </p>
               </div>
 
-              <div className="pt-4 mt-3 border-t border-slate-100 dark:border-slate-800">
+              <div className="pt-4 mt-3 border-t border-slate-100">
                 <Link
                   to="/book"
-                  className="text-xs font-bold text-teal-700 dark:text-teal-400 hover:underline flex items-center gap-1"
+                  className="text-xs font-bold text-emerald-700 hover:text-emerald-900 hover:underline flex items-center gap-1"
                 >
-                  <span>Book for this condition</span>
+                  <span>Request session for this</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -205,23 +204,23 @@ export default function DashboardPage() {
         </div>
       </section>
 
-      {/* Reception Desk Live Section: Today's Appointments & Pending Queue */}
+      {/* Reception OPD Desk Live Section: Today's Appointments & Pending Queue */}
       <section className="space-y-5">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-emerald-100 pb-3">
           <div>
-            <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-teal-700" />
-              <span>Clinic Reception OPD Desk (Live Demo)</span>
+            <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-emerald-700" />
+              <span>Reception OPD Schedule & Booking Queue</span>
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              Front-desk queue for verifying slot requests and managing today's patients
+            <p className="text-xs sm:text-sm text-slate-600">
+              Live clinic desk at Malkapuram: review incoming patient requests and today's roster
             </p>
           </div>
           <div className="flex items-center gap-2 text-xs">
             <span className="px-3 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 font-bold">
               {stats.pending} Pending Requests
             </span>
-            <span className="px-3 py-1 rounded-full bg-teal-50 text-teal-800 border border-teal-200 font-bold">
+            <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold">
               {stats.confirmed} Confirmed Sessions
             </span>
           </div>
@@ -229,20 +228,20 @@ export default function DashboardPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Pending Patient Requests (Left 2 cols) */}
-          <div className="lg:col-span-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-xs space-y-4">
+          <div className="lg:col-span-2 bg-white rounded-2xl border border-emerald-100 p-5 shadow-xs space-y-4">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
-                  <span>Pending Requests from Clinic Break Period</span>
+                  <span>Pending Requests from Off-Hours & Break Period</span>
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
-                  Patients who requested a slot while the clinic phone line was busy
+                <p className="text-xs text-slate-500">
+                  Patients who requested an appointment while reception was on break
                 </p>
               </div>
               <Link
                 to="/appointments?status=Pending"
-                className="text-xs font-bold text-teal-700 hover:underline flex items-center gap-1"
+                className="text-xs font-bold text-emerald-700 hover:underline flex items-center gap-1"
               >
                 <span>View all ({stats.pending})</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -252,8 +251,8 @@ export default function DashboardPage() {
             {pendingRequests.length === 0 ? (
               <EmptyState
                 icon={CheckCircle2}
-                title="All pending requests handled"
-                description="No unconfirmed slot requests right now. Submit a slot request from the booking page to test reception confirmation."
+                title="No pending requests in queue"
+                description="All patient slot requests are confirmed. Use the booking form to simulate a new patient request."
                 actionLabel="Book a Slot"
                 onAction={() => navigate('/book')}
               />
@@ -271,18 +270,18 @@ export default function DashboardPage() {
           </div>
 
           {/* Today's Schedule (Right 1 col) */}
-          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-xs space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+          <div className="bg-white rounded-2xl border border-emerald-100 p-5 shadow-xs space-y-4">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
-                <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
-                  <Clock className="w-4 h-4 text-teal-700" />
-                  <span>Today's Clinic Schedule</span>
+                <h3 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
+                  <Clock className="w-4 h-4 text-emerald-700" />
+                  <span>Today's Sessions</span>
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
+                <p className="text-xs text-slate-500">
                   {formatDateDisplay(todayStr)}
                 </p>
               </div>
-              <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+              <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-100">
                 {todayAppointments.length} sessions
               </span>
             </div>
@@ -296,20 +295,20 @@ export default function DashboardPage() {
                 {todayAppointments.map((apt) => (
                   <div
                     key={apt.id}
-                    className="p-3 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex items-center justify-between text-xs"
+                    className="p-3 rounded-xl border border-slate-100 bg-emerald-50/30 flex items-center justify-between text-xs"
                   >
                     <div>
-                      <p className="font-bold text-slate-900 dark:text-slate-100">
+                      <p className="font-bold text-slate-900">
                         {apt.patientName}
                       </p>
                       <p className="text-[11px] text-slate-500">{apt.type}</p>
                     </div>
                     <div className="text-right">
-                      <span className="font-bold text-slate-800 dark:text-slate-200 block">
+                      <span className="font-bold text-slate-800 block">
                         {apt.time}
                       </span>
                       <span className={`text-[10px] font-bold ${
-                        apt.status === 'Confirmed' ? 'text-teal-700' : 'text-amber-600'
+                        apt.status === 'Confirmed' ? 'text-emerald-700' : 'text-amber-600'
                       }`}>
                         {apt.status}
                       </span>
@@ -322,9 +321,9 @@ export default function DashboardPage() {
             <div className="pt-2">
               <Link
                 to="/appointments"
-                className="w-full inline-flex items-center justify-center gap-1 text-xs font-bold text-teal-700 hover:bg-teal-50 p-2 rounded-xl transition-colors"
+                className="w-full inline-flex items-center justify-center gap-1 text-xs font-bold text-emerald-700 hover:bg-emerald-50 p-2 rounded-xl transition-colors"
               >
-                <span>Open Full Reception Schedule →</span>
+                <span>View Full Clinic Schedule →</span>
               </Link>
             </div>
           </div>
@@ -332,50 +331,52 @@ export default function DashboardPage() {
       </section>
 
       {/* Weekly Schedule Chart */}
-      <section className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-xs">
+      <section className="bg-white rounded-2xl border border-emerald-100 p-6 shadow-xs">
         <WeeklyVolumeChart />
       </section>
 
-      {/* Clinic Location & Working Hours Footer Info */}
-      <section className="bg-teal-900 text-white rounded-3xl p-6 sm:p-8 space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-teal-100">
+      {/* Clinic Location & Working Hours Footer */}
+      <section className="bg-emerald-900 text-white rounded-3xl p-6 sm:p-8 space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-emerald-100">
           <div>
             <h4 className="text-sm font-bold text-white mb-2 flex items-center gap-1.5">
-              <Building2 className="w-4 h-4 text-teal-300" />
-              <span>Care & Cure Physiotherapy</span>
+              <Building2 className="w-4 h-4 text-emerald-300" />
+              <span>Care & Cure Physiotherapy Clinic</span>
             </h4>
             <p className="leading-relaxed">
-              D.No 48-14-3, Sri Sai Complex, Rama Talkies Road, Dwaraka Nagar, Visakhapatnam, Andhra Pradesh 530016.
+              Malkapuram, Visakhapatnam, Andhra Pradesh 530011.
             </p>
-            <p className="mt-2 text-teal-300">Reg. No: AP/MC/PT/2012/0481</p>
+            <p className="mt-2 text-emerald-300">
+              Dr. K. Hareesh Patnaik & Dr. V.V. Reshma Patnaik
+            </p>
           </div>
 
           <div>
             <h4 className="text-sm font-bold text-white mb-2 flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-teal-300" />
+              <Clock className="w-4 h-4 text-emerald-300" />
               <span>OPD Consultation Hours</span>
             </h4>
             <p><strong>Morning OPD:</strong> 09:00 AM – 12:00 PM</p>
             <p className="text-amber-300 font-bold mt-1">
-              <strong>Break Hours:</strong> 12:00 PM – 05:00 PM (Inpatient rounds)
+              <strong>Break Period:</strong> 12:00 PM – 04:00 PM
             </p>
-            <p className="mt-1"><strong>Evening OPD:</strong> 05:00 PM – 09:00 PM</p>
-            <p className="text-teal-300 mt-1">Sundays: Morning 10:00 AM – 01:00 PM</p>
+            <p className="mt-1"><strong>Evening OPD:</strong> 04:00 PM – 09:00 PM</p>
+            <p className="text-emerald-300 mt-1">Appointments can be requested 24/7 online</p>
           </div>
 
           <div>
             <h4 className="text-sm font-bold text-white mb-2 flex items-center gap-1.5">
-              <Phone className="w-4 h-4 text-teal-300" />
+              <Phone className="w-4 h-4 text-emerald-300" />
               <span>Helpline & Booking</span>
             </h4>
-            <p>Reception Phone: <strong>+91 891 270 0000</strong></p>
-            <p>Emergency Mobile: <strong>+91 90000 00000</strong></p>
+            <p>Direct Contact: <strong>+91 87909 72042</strong></p>
+            <p className="mt-1 text-emerald-200">Physiotherapy & Sports Injury Services</p>
             <div className="pt-2">
               <Link
                 to="/book"
-                className="inline-block px-3.5 py-1.5 rounded-lg bg-white text-teal-900 font-bold text-xs shadow-sm hover:bg-teal-50"
+                className="inline-block px-3.5 py-1.5 rounded-lg bg-white text-emerald-900 font-bold text-xs shadow-sm hover:bg-emerald-50"
               >
-                Book 24/7 Online
+                Book Appointment Online
               </Link>
             </div>
           </div>

@@ -45,7 +45,7 @@ export default function BottomNav() {
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200/80 dark:border-slate-800 px-2 py-1.5 transition-colors">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-2 py-1.5 transition-colors shadow-lg">
       <div className="flex items-center justify-around max-w-md mx-auto">
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -55,14 +55,14 @@ export default function BottomNav() {
               <NavLink
                 key={item.to}
                 to={item.to}
-                className={({ isActive }) =>
+                className={() =>
                   `flex flex-col items-center justify-center -mt-4 p-2`
                 }
               >
-                <div className="w-12 h-12 rounded-full bg-teal-600 text-white flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all">
+                <div className="w-12 h-12 rounded-full bg-emerald-700 text-white flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all">
                   <Icon className="w-6 h-6" />
                 </div>
-                <span className="text-[10px] font-bold text-teal-600 dark:text-teal-400 mt-1">
+                <span className="text-[10px] font-bold text-emerald-800 mt-1">
                   Book Slot
                 </span>
               </NavLink>
@@ -77,8 +77,8 @@ export default function BottomNav() {
               className={({ isActive }) =>
                 `flex flex-col items-center justify-center py-1 px-2.5 rounded-xl transition-all relative ${
                   isActive
-                    ? 'text-teal-600 dark:text-teal-400 font-bold'
-                    : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
+                    ? 'text-emerald-700 font-bold'
+                    : 'text-slate-500 hover:text-slate-800'
                 }`
               }
             >

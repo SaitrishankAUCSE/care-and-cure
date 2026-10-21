@@ -83,7 +83,7 @@ export default function AppointmentsPage() {
     try {
       await addAppointment(formData);
       setIsCreateModalOpen(false);
-      toast.success(`Appointment for ${formData.patientName} created successfully!`);
+      toast.success(`Appointment for ${formData.patientName} registered successfully!`);
     } catch (err) {
       toast.error('Failed to create appointment.');
     }
@@ -101,7 +101,7 @@ export default function AppointmentsPage() {
   };
 
   const handleDelete = async (id) => {
-    if (window.confirm('Are you sure you want to delete this fictional demo record?')) {
+    if (window.confirm('Are you sure you want to remove this appointment record?')) {
       await deleteAppointment(id);
       toast.info('Appointment record removed.');
     }
@@ -117,25 +117,25 @@ export default function AppointmentsPage() {
       {/* Top Header & Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-            Clinic Reception OPD Desk & Appointment Register
+          <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+            Clinic Reception OPD Desk & Appointments
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-            Care & Cure Clinic • Manage patient queue, confirm break-hour requests, and register walk-ins
+          <p className="text-xs sm:text-sm text-slate-500">
+            Care And Cure Physiotherapy, Malkapuram (Dr. K. Hareesh Patnaik & Dr. V.V. Reshma Patnaik • 87909 72042)
           </p>
         </div>
 
         <button
           onClick={() => setIsCreateModalOpen(true)}
-          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-teal-700 hover:bg-teal-800 text-white shadow-sm transition-all active:scale-95 self-start sm:self-auto"
+          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-emerald-700 hover:bg-emerald-800 text-white shadow-xs transition-all active:scale-95 self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" />
-          <span>New Patient Entry (Reception)</span>
+          <span>New Patient Booking (Reception)</span>
         </button>
       </div>
 
       {/* Filter Toolbar: Search, Status Tabs, Date Filter */}
-      <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 p-4 shadow-sm space-y-4">
+      <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row gap-3">
           {/* Search Bar */}
           <div className="relative flex-1">
@@ -144,13 +144,13 @@ export default function AppointmentsPage() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by patient name, demo phone, notes..."
-              className="w-full pl-10 pr-9 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500"
+              placeholder="Search by patient name, phone number, treatment notes..."
+              className="w-full pl-10 pr-9 py-2 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                className="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -163,7 +163,7 @@ export default function AppointmentsPage() {
             <select
               value={dateFilter}
               onChange={(e) => setDateFilter(e.target.value)}
-              className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 text-xs font-medium text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-500/20"
+              className="px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600"
             >
               <option value="all">All Dates</option>
               <option value="today">Today's Schedule</option>
@@ -188,15 +188,15 @@ export default function AppointmentsPage() {
                 onClick={() => handleSetStatusFilter(status)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold whitespace-nowrap transition-all ${
                   isSelected
-                    ? 'bg-teal-600 text-white shadow-xs'
-                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
+                    ? 'bg-emerald-700 text-white shadow-xs'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
                 <span>{status}</span>
                 <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${
                   isSelected
-                    ? 'bg-teal-700 text-teal-100'
-                    : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
+                    ? 'bg-emerald-800 text-emerald-100'
+                    : 'bg-slate-200 text-slate-600'
                 }`}>
                   {count}
                 </span>
